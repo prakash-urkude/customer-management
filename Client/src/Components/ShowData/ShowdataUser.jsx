@@ -35,7 +35,7 @@ const ShowData = () => {
     <div className='row5 centermargin'>
       <div className='manager'>
         {memoizedUser &&
-          <div className='managercard' key={memoizedUser._id}>
+          <div className='managercard' style={{borderRadius:'2px 40px',backgroundColor:'#e3e2eaa1'}} key={memoizedUser._id}>
             <div className='leftside'>
               <p className='inputText'>FirstName: {memoizedUser.firstName}</p>
               <p className='inputText'>LastName: {memoizedUser.lastName}</p>

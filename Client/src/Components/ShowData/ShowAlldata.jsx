@@ -110,7 +110,7 @@ const handleDelete = async (id) => {
         { updateForm && <UpdateFormcomponent id={selectedId} updateForm={updateForm} setUpdateForm={setUpdateForm} /> }
       {user && user.map((user) =>(
         <div >
-        <div className='usercard' key={user._id}>
+        <div className='usercard' style={{backgroundColor:'pink' ,margin:10, borderRadius:'2px 20px'}} key={user._id}>
 
            
           <div className='leftside'>
@@ -121,8 +121,8 @@ const handleDelete = async (id) => {
             <p>Department: {user.role}</p>
           </div>
           <div className='column'>
-            <button className='' onClick={() =>handleUpdate(user._id)}><MdEdit /></button>
-           <button className='' onClick={() =>handleDelete(user._id)}><MdDelete /></button>    
+            <button className='uD' onClick={() =>handleUpdate(user._id)}><MdEdit /></button>
+           <button className='uD' onClick={() =>handleDelete(user._id)}><MdDelete /></button>    
           </div>
           
           <br />
