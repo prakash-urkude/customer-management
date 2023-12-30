@@ -1,4 +1,5 @@
 # customer-management
-![Screenshot (336)](https://github.com/prakash-urkude/customer-management/assets/115548645/080f4caf-5445-436c-9f40-201625f39305)
-![Screenshot (335)](https://github.com/prakash-urkude/customer-management/assets/115548645/72ef7987-b277-4695-9f9a-4f6d10c9176f)
 
+
+![Screenshot (341)](https://github.com/prakash-urkude/customer-management/assets/115548645/78da35d9-aa70-4b5a-84e0-e0cafc6feb73)
+![Screenshot (340)](https://github.com/prakash-urkude/customer-management/assets/115548645/fe6b0f6d-bb19-4436-9178-17bba7c79f6f)
