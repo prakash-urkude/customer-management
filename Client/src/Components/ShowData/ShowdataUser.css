@@ -39,14 +39,17 @@ justify-content:space-around ;
 }
 /* manager */
 .manager{
-
+   
    display: flex;
    justify-content: center;
     padding: 10px;
     width: 100%;
 }
 .managercard{
-    width: 800px;
+    background: url(./bg7.jfif) no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    /* width: 800px; */
     display: flex;
     justify-content: space-between;
 }
@@ -54,6 +57,9 @@ justify-content:space-around ;
     width: 400px;
     display: flex;
     justify-content: space-around;
+    background: url(./bg6.jfif) no-repeat;
+    background-size: cover; 
+    background-position: center; 
 }
 /*  */
 /* img */
@@ -98,3 +104,27 @@ justify-content:space-around ;
     padding: 20px;
     text-align: left;
 }
+
+/* Add this CSS to your stylesheets */
+
+/* Add this CSS to your stylesheets */
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn ease-in-out 1.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+
+  /* user cards */
+
+  

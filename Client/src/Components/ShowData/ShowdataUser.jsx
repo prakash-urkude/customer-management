@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import ShowAlldata from '../ShowData/ShowAlldata';
 
 const ShowData = () => {
+  const [updateData , setUpdateData] = useState(false)
   const Navigate = useNavigate();
   const [user, setUser] = useState({});
 
@@ -17,12 +18,12 @@ const ShowData = () => {
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
-  }, [setUser]);
+  }, [localStorage,setUser ,updateData ]);
 
   useEffect(() => {
     fetchUserData();
-  }, [localStorage, fetchUserData]);
-
+  }, [localStorage, fetchUserData ,setUser]);
+ 
   const memoizedUser = useMemo(() => user, [user]);
 
   const handleLogout = useCallback(() => {
@@ -31,7 +32,7 @@ const ShowData = () => {
     Navigate('/');
   }, [Navigate]);
 
-  return (
+  return ( 
     <div className='row5 centermargin'>
       <div className='manager'>
         {memoizedUser &&
@@ -53,9 +54,9 @@ const ShowData = () => {
         }
       </div>
 
-      {memoizedUser.role === "Manager" &&
+      {memoizedUser && memoizedUser.role === "Manager" &&
         <div>
-          <ShowAlldata user={memoizedUser} setUser={setUser} />
+          <ShowAlldata updateData={updateData} setUpdateData={setUpdateData} />
         </div>
       }
     </div>

@@ -45,7 +45,8 @@ console.log('apiurls:16' , apiUrls)
   };
 
   return (
-    <div className='makeRow'>
+    
+    <div className=' makeRow'>
       <form className='padding margin' onSubmit={handleSubmit}>
         <div className='grid2'>
         <div  className='inputBox'>

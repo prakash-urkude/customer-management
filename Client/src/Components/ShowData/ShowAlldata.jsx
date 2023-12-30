@@ -7,10 +7,11 @@ import UpdateFormcomponent from '../signin register/UpdateForm' ;
 import axios from 'axios';
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
-const ShowData = () => {
+
+const ShowData = ({updateData ,setUpdateData}) => {
   const Navigate = useNavigate()
-  const [user, setUser] = useState([]);
-  const [updateForm , setUpdateForm] = useState(false)
+  const [allUser, setAllUser] = useState([]);
+  const [updateForm , setUpdateForm] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
 
   const [deleted, setDeleted] = useState(false);
@@ -23,16 +24,17 @@ const ShowData = () => {
         const userData = await getAllUsers();
         
         console.log('userData14:' , userData)
-        setUser(userData.data);
+        setAllUser(userData.data);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
     };
-
+    setUpdateData(!updateData)
     fetchData();
-  }, [updateForm , deleted]);
 
-  console.log('setUser24:' , user)
+  }, [updateForm ,setUpdateForm , deleted]);
+
+  console.log('Showalldata - setAllUser37:' , allUser ,"updateForm:" ,updateForm , "updateData:" ,updateData )
 
   const handleLogout =() =>{
     window.alert("Are you sure ?")
@@ -49,7 +51,7 @@ const ShowData = () => {
         params: { location: location },
       });
   console.log("response1:" , response)
-       setUser(response.data);
+  setAllUser(response.data.data);
     } catch (error) {
       console.error('Error fetching user data by location:', error);
     }
@@ -86,9 +88,9 @@ const handleDelete = async (id) => {
   return (
     <div className='row5' >
         <div className='row5' style={{backgroundColor:'#ff89',padding:5 , display:'flex', justifyContent:'space-around'}}>
-          <p>Filter: </p>
+          <p style={{margin:20 }}>Filter: </p>
             <div  className='inputBox' style={{display:'flex'}}>
-        <p>Location</p>
+        <p style={{margin:20 }}>Location</p>
           <select 
           className='inputText'
             name="location"
@@ -108,9 +110,9 @@ const handleDelete = async (id) => {
 
         <div style={{display:'flex' ,justifyContent:'space-around', flexWrap:'wrap' , margin:'0 auto'}} className='row5'>
         { updateForm && <UpdateFormcomponent id={selectedId} updateForm={updateForm} setUpdateForm={setUpdateForm} /> }
-      {user && user.map((user) =>(
+      {allUser && allUser.map((user) =>(
         <div >
-        <div className='usercard' style={{backgroundColor:'pink' ,margin:10, borderRadius:'2px 20px'}} key={user._id}>
+        <div className='usercard fade-in' style={{backgroundColor:'pink' ,margin:10, borderRadius:'2px 20px'}} key={user._id}>
 
            
           <div className='leftside'>

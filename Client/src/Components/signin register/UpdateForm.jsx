@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios'
 
 import '../signin register/ShowForm.css'
-const ReisterForm = ({id ,updateForm ,setUpdateForm}) => {
+const UpdateForm = ({id ,updateForm ,setUpdateForm}) => {
  
   const [formData, setFormData] = useState({
     firstName: '',
@@ -153,4 +153,4 @@ console.log('update - apiurls:16' , apiUrls)
   );
 };
 
-export default ReisterForm;
+export default UpdateForm;

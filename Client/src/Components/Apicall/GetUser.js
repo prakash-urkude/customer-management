@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const apiUrls = process.env.REACT_APP_API_NEXT_PUBLIC_SERVER_URL;
 
-const getUserById = async () => {
+const getUser = async () => {
   try {
 
     const response = await axios.get(`${apiUrls}/user/viewspecificuser/${localStorage.getItem('_id')}`);
@@ -15,4 +15,4 @@ const getUserById = async () => {
   }
 };
 
-export default getUserById;
+export default getUser;
