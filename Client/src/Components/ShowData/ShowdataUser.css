@@ -12,6 +12,15 @@
     flex-direction: column;
     text-align: start;
 }
+.sortIcon {
+    cursor: pointer;
+    transition: color 0.3s; /* Add a smooth transition effect */
+ }
+ 
+ .sortIcon:hover {
+    color: blue; /* Change the color on hover as needed */
+ }
+ 
 .smallboxeitem{
 
 
